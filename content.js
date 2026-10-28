@@ -29,7 +29,7 @@ const COURSE = [
           ]),
           note('Odpowiedzi są przykładowe. Model za każdym razem pisze trochę inaczej, a różne modele różnią się bardzo. Jeśli wkleisz prompt i dostaniesz inny tekst, to normalne. Porównuj sposób odpowiedzi, nie słowa.'),
           p('Najwięcej nauczysz się, gdy przepiszesz prompt do własnego czatu, a potem zaczniesz go psuć i poprawiać: usuniesz jedno zdanie, dodasz przykład, zmienisz rolę. Wystarczy darmowa wersja dowolnego czatu.'),
-          p('Lekcje kończą się pytaniami kontrolnymi. Lekcja jest zaliczona, gdy odpowiesz poprawnie na wszystkie. Kurs kończy się Projektem 2: abstraktem na konferencję naukową, napisanym z pomocą technik z kursu.'),
+          p('Lekcje kończą się pytaniami kontrolnymi. Lekcja jest zaliczona, gdy odpowiesz poprawnie na wszystkie. Kurs kończy się Projektem 2: zgłoszeniem lightning talku na konferencję PUSH UX, napisanym z pomocą technik z kursu.'),
         ],
       },
     ],
@@ -367,7 +367,7 @@ Odpowiedz na te pytania, a zadam kolejne, jeśli będzie trzeba.`],
           table(['Narzędzie', 'Co robi', 'Kiedy użyć'], [
             ['<a href="https://elicit.com" target="_blank" rel="noopener">Elicit</a>', 'Szuka artykułów w bazach naukowych i wyciąga z nich dane do tabeli: metodę, próbę, wyniki.', 'Na początku przeglądu literatury, gdy szukasz, co w ogóle zbadano.'],
             ['<a href="https://scispace.com" target="_blank" rel="noopener">SciSpace</a> (dawniej Typeset)', 'Wyszukiwarka artykułów i czat z PDF-em. Wyjaśnia fragmenty tekstu, wzory, tabele.', 'Gdy czytasz trudny artykuł i chcesz zrozumieć konkretny fragment.'],
-            ['<a href="https://notebooklm.google" target="_blank" rel="noopener">NotebookLM</a>', 'Odpowiada tylko na podstawie źródeł, które sam wgrasz. Każde zdanie ma przypis do fragmentu źródła.', 'Gdy masz już wybrane teksty i chcesz je porównać, streścić, wyciągnąć pojęcia.'],
+            ['<a href="https://notebooklm.google" target="_blank" rel="noopener">NotebookLM</a>', 'Odpowiada tylko na podstawie źródeł, które wgrasz. Każde zdanie ma przypis do fragmentu źródła.', 'Gdy masz już wybrane teksty i chcesz je porównać, streścić, wyciągnąć pojęcia.'],
           ]),
           note('Elicit i SciSpace szukają w bazach artykułów naukowych, głównie anglojęzycznych. Literaturę z HCI znajdują dobrze, ale polskich tekstów, raportów branżowych i artykułów z blogów UX mają niewiele. W NotebookLM ten problem nie istnieje, bo pracujesz na własnych plikach.'),
           h('Promptowanie dokumentów'),
@@ -401,31 +401,32 @@ Różnica: tak. Pierwsza definicja mówi o skutku dla użytkownika, druga o samy
     title: 'Projekt',
     lessons: [
       {
-        id: 'project-2', title: 'Projekt 2: abstrakt konferencyjny',
+        id: 'project-2', title: 'Projekt 2: lightning talk na PUSH UX',
         blocks: [
           task({
-            title: 'Abstrakt na konferencję naukową',
-            html: '<p>Chcesz zgłosić wystąpienie na konferencję naukową, na przykład z HCI albo UX. Konferencję wskazuje prowadzący albo wybierasz ją sam w porozumieniu z nim. Korzystając z dowolnego czatu i technik z tego kursu, przygotuj abstrakt, który wyślesz jako zgłoszenie. Temat musi pasować do tematyki tegorocznej edycji.</p><p>Zacznij od przeczytania wezwania do zgłoszeń (<i>call for papers</i>) na stronie konferencji: tematy, limit słów, wymagania formalne. Wklej je do rozmowy, bo model ich nie zna. Czas: 30 minut.</p><p>Oddaj abstrakt i listę użytych promptów w sposób wskazany przez prowadzącego.</p>',
+            title: 'Zgłoszenie lightning talku na PUSH UX',
+            html: '<p>PUSH UX to praktyczna konferencja dla projektantów i badaczy UX. Przygotuj zgłoszenie <b>lightning talku</b>, czyli 15-minutowego wystąpienia w jednej z równoległych sesji. Korzystaj z dowolnego czatu i technik z tego kursu.</p><p>Zacznij od przeczytania <a href="https://push-conference.com/program/call-for-proposals/talk" target="_blank" rel="noopener">wezwania do zgłoszeń</a>. Wklej jego treść do rozmowy, bo model jej nie zna. Organizatorzy piszą wprost, czego szukają:</p><ul><li><b>autorytet</b>: dlaczego to Ty masz o tym mówić (własne doświadczenie, projekt, studium przypadku),</li><li><b>treść z pierwszej ręki</b>: własna praktyka, także porażki i kulisy rozwiązywania problemów,</li><li><b>konkretne wnioski</b> w formie „osiągniesz X, robiąc Y”,</li><li><b>praktyczność</b>: rady, które słuchacz zastosuje w pracy.</li></ul><p>Odrzucają zgłoszenia spekulatywne (kilka punktów bez treści) oraz teoretyczne i „uświadamiające”. Model domyślnie pisze właśnie takie, więc to Ty musisz dostarczyć mu konkret: projekt z zajęć, przeprowadzone badanie, błąd, z którego coś wynikło.</p><p>Zgłoszenie pisz po angielsku. Oddaj tytuł, abstrakt, 3 wnioski dla słuchaczy, krótkie bio i listę użytych promptów w sposób wskazany przez prowadzącego.</p>',
             check: [
-              'Temat mieści się w jednym z obszarów z wezwania do zgłoszeń',
-              'Abstrakt mieści się w limicie słów',
-              'Jest pytanie badawcze, materiał, metoda i spodziewany albo uzyskany wynik',
+              'Wystąpienie mieści się w 15 minutach: jeden problem, nie przegląd dziedziny',
+              'Abstrakt opiera się na Twoim własnym projekcie albo badaniu, nie na ogólnej wiedzy',
+              'Każdy z 3 wniosków ma formę „osiągniesz X, robiąc Y”',
+              'Jest zdanie, dlaczego to Ty o tym mówisz',
               'Żadnej liczby, nazwy badania ani narzędzia nie zostawiasz bez sprawdzenia',
-              'Usunięte zostały puste zwroty („w dzisiejszym dynamicznym świecie”)',
+              'Usunięte zostały puste zwroty („in today’s fast-paced digital world”)',
               'Lista promptów pokazuje co najmniej dwie techniki z kursu',
             ],
             example: `[odwrócona rozmowa]
-Chcę napisać abstrakt na konferencję naukową. Poniżej wklejam call for papers. Zadawaj mi po jednym pytaniu o mój pomysł, dopóki nie będziesz wiedzieć wystarczająco dużo, żeby zaproponować trzy możliwe tematy zgodne z wezwaniem.
-[treść call for papers]
+Chcę zgłosić 15-minutowy lightning talk na konferencję PUSH UX. Poniżej wklejam wezwanie do zgłoszeń. Zadawaj mi po jednym pytaniu o moje projekty i doświadczenia z UX, dopóki nie będziesz wiedzieć wystarczająco dużo, żeby zaproponować trzy tematy zgodne z tym, czego szukają organizatorzy. Nie proponuj tematów, których nie da się oprzeć na tym, co mi się przydarzyło.
+[treść wezwania do zgłoszeń]
 
 [persona + format]
-Jesteś recenzentem tej konferencji. Na podstawie naszej rozmowy napisz abstrakt w temacie 2. Maksymalnie 250 słów. Struktura: problem, dane, metoda, wynik, znaczenie. Bez przymiotników oceniających.
+Jesteś członkiem komisji programowej PUSH UX, który odrzuca zgłoszenia ogólnikowe i teoretyczne. Na podstawie naszej rozmowy napisz po angielsku zgłoszenie w temacie 2: tytuł (do 10 słów), abstrakt (do 150 słów), 3 wnioski w formie „Achieve X by doing Y”. Używaj tylko faktów z naszej rozmowy.
 
 [fact check list]
-Wypisz wszystkie twierdzenia z abstraktu, które muszę sprawdzić, zanim go wyślę.
+Wypisz wszystkie twierdzenia ze zgłoszenia, które muszę sprawdzić albo potwierdzić, zanim je wyślę.
 
 [iteracja]
-Recenzent pisze, że metoda jest opisana zbyt ogólnie. Przepisz zdanie o metodzie, używając tylko informacji z naszej rozmowy.`,
+Oceń to zgłoszenie według czterech kryteriów z wezwania (autorytet, treść z pierwszej ręki, konkretne wnioski, praktyczność). Przy każdym kryterium wskaż najsłabsze zdanie i zaproponuj poprawkę.`,
           }),
           h('Co dalej'),
           p('Pełniejszy przegląd technik, z przykładami i odnośnikami do badań, znajdziesz w <a href="https://github.com/dair-ai/Prompt-Engineering-Guide" target="_blank" rel="noopener">Prompt Engineering Guide</a> przygotowanym przez DAIR.AI. Jest też wersja w formie strony: <a href="https://www.promptingguide.ai" target="_blank" rel="noopener">promptingguide.ai</a>.'),
