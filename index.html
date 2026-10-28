@@ -16,11 +16,8 @@
     --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
     --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
     --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+    color-scheme: light;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { --bg: #0e1218; --surface: #161b24; --ink: #e5e9f0; --muted: #98a2b3; --line: #273041; --accent: #8aaeff; --accent-soft: #1b2741; --ok: #5cc995; --ok-soft: #13291e; --bad: #ff8f80; --bad-soft: #321a17; --note: #2a2410; --note-line: #9a7e1e; color-scheme: dark; }
-  }
-  :root[data-theme="dark"] { --bg: #0e1218; --surface: #161b24; --ink: #e5e9f0; --muted: #98a2b3; --line: #273041; --accent: #8aaeff; --accent-soft: #1b2741; --ok: #5cc995; --ok-soft: #13291e; --bad: #ff8f80; --bad-soft: #321a17; --note: #2a2410; --note-line: #9a7e1e; color-scheme: dark; }
   * { box-sizing: border-box; }
   html, body { height: 100%; }
   body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--body); display: grid; grid-template-columns: 300px 1fr; }
@@ -52,8 +49,6 @@
   article p { margin: 0; max-width: 66ch; }
   article ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; max-width: 66ch; }
   code { font: 14px var(--mono); background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
-  blockquote { margin: 0; padding: 4px 0 4px 18px; border-left: 3px solid var(--line); font-size: 18px; font-style: italic; max-width: 62ch; }
-  blockquote cite { display: block; font: 500 12px var(--mono); font-style: normal; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: .05em; }
 
   .def { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px 22px; }
   .def .what { grid-column: 1 / -1; font-size: 18px; }
@@ -130,7 +125,7 @@
 </head>
 <body>
 <nav id="nav">
-  <p class="brand">Pracownia promptów<small>LLM w pracy naukowej</small></p>
+  <p class="brand">Pracownia promptów<small>Prompt engineering · UX</small></p>
   <div class="progress"><span id="count"></span><div class="bar"><i id="fill"></i></div></div>
   <button id="menu" aria-expanded="false">Spis lekcji</button>
   <div id="toc"></div>
@@ -164,7 +159,6 @@ function block(b, qi) {
     case 'h': return `<h2>${b.text}</h2>`;
     case 'note': return `<div class="note">${b.html}</div>`;
     case 'list': return ul(b.items);
-    case 'quote': return `<blockquote>${b.html}<cite>${b.who}</cite></blockquote>`;
     case 'def': return `<section class="def"><p class="what">${b.what}</p><div><h3>Kiedy</h3>${ul(b.when)}</div><div><h3>Na czym polega</h3>${ul(b.keys)}</div></section>`;
     case 'chat': return `<section class="chat">${b.title ? `<h3>${b.title}</h3>` : ''}${b.turns.map((x, i) => turn(x, i, b.turns.length)).join('')}<div class="how"><b>Jak to działa</b>${b.how}</div></section>`;
     case 'table': return `<div class="tbl"><table><tr>${b.head.map(c => `<th>${c}</th>`).join('')}</tr>${b.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`;
